@@ -5,6 +5,18 @@ section h2 {
 .new-tweet {
     width: 60%;
 }
+
+textarea.error {
+    border: 1px dashed red;
+    font-weight: 300;
+    color: red;
+}
+label.error {
+    color: red;
+    font-size: 1rem;
+    display: block;
+    margin-top: 5px;
+}
 #tweet-text {
     border-bottom: 3px solid #4d4848;
 }
