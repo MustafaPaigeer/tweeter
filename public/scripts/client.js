@@ -8,28 +8,12 @@
 $(document).ready(function () {
   $('#is-empty').hide();
   $('#exceeds').hide();
-  
+
   $('form').on('submit', function (event) {
-    event.preventDefault();
     $('#is-empty').hide();
     $('#exceeds').hide();
-    // $('form').validate({
-    //   rules: {
-    //     text: {
-    //       required: true,
-    //       minlength: 1,
-    //       maxlength: 140
-    //     },
-    //   },
-    //   messages: {
-    //     text: {
-    //       minlength: "Tweets cannot be empty character",
-    //       maxlength: "Tweet shouldn't be more than 140 characters"
-    //     }
-    //   }
-
-      
-    // });
+    
+    event.preventDefault();
 
     const tweetText = $('#tweet-text').val();
     if (tweetText.length < 1) {
@@ -39,20 +23,21 @@ $(document).ready(function () {
       $('#exceeds').slideDown();
       return;
     } else {
-    let serializedData = $('form').serialize();
+      let serializedData = $('form').serialize();
 
-    $.ajax({
-      url: "/tweets",
-      type: "post",
-      data: serializedData
-    })
-      .then((data) => {
-        loadTweets();
-        $('#tweet-text').val('');
+      $.ajax({
+        url: "/tweets",
+        type: "post",
+        data: serializedData
       })
-     }
+        .then((data) => {
+          loadTweets();
+          $('#tweet-text').val('');
+          $('output').text('140');
+        })
+    }
   });
-  
+
   const loadTweets = () => {
     $.ajax('/tweets', { method: 'GET' })
       .then((tweets) => {
@@ -95,4 +80,10 @@ $(document).ready(function () {
       $('#tweetContainer').prepend($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
     }
   }
+
+  $('textarea').on('focus', () => {
+    $('#is-empty').hide();
+    $('#exceeds').hide();
+  });
+
 });
