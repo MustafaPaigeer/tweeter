@@ -12,7 +12,7 @@ $(document).ready(function () {
   $('form').on('submit', function (event) {
     $('#is-empty').hide();
     $('#exceeds').hide();
-    
+
     event.preventDefault();
 
     const tweetText = $('#tweet-text').val();
@@ -69,7 +69,7 @@ $(document).ready(function () {
         </article>
         `
     return myTweet;
-  }
+  };
 
   const renderTweets = function (tweets) {
     // loops through tweets
@@ -79,7 +79,7 @@ $(document).ready(function () {
       const $tweet = createTweetElement(tweets[tweetData]);
       $('#tweetContainer').prepend($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
     }
-  }
+  };
 
   $('textarea').on('focus', () => {
     $('#is-empty').hide();
