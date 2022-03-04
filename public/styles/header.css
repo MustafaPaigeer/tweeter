@@ -1,13 +1,18 @@
-#name-icon {
-    width: 100%;
+.header {
+    width: 30%;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     font-family: "Source Sans Pro";
+    font-size: 1.7rem;
+    color:aliceblue;
     background-image: url("../images/background.png");
     background-color: #2d85f0;
-    margin-top: 120px;
+    margin-top: 150px;
+    margin-left: 50px;
+    float: left;
 }
 
 

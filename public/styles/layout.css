@@ -22,23 +22,38 @@ body {
 }
 nav {
   font-family: "Bungee";
+  margin-bottom: 100px;
 }
 
 main {
-  width: 90%;
+  width: 60%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: auto;
+  float: right;
+  margin-top: 150px;
 }
 
 
-/* .new-tweet {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-} */
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+
+/* iPads and Tablets Styles */
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 80%;
+    float: none;
+    margin: auto;
+  }
+
+  header.header {
+    width: 100%;
+    float: none;
+    position: top;
+    margin: 0;
+  }
+
+  nav.navbar {
+    background-color: transparent;
+  }
+
+}
