@@ -28,8 +28,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
   <!-- App JS -->
   <script type="text/javascript" src="/scripts/client.js"></script>
 </head>
@@ -57,14 +55,15 @@
   <main class="container">
 
     <section class="new-tweet">
-      <div id="is-empty"><h4>The tweet cannot be empy</h4></div>
-      <div id="exceeds"><h4>The characters cannot exceeds 140</h4></div>
-
-     <h2>Compose Tweet</h2>
       <form>
         <div>
-          <label></label>
           <textarea placeholder="What are you humming about?" name="text" id="tweet-text"></textarea>
+          <div id="is-empty">
+            <h4>The tweet cannot be empty!</h4>
+          </div>
+          <div id="exceeds">
+            <h4>You are exceeding the maximum number of allowed characters!</h4>
+          </div>
           <div id="newTweet">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
@@ -73,42 +72,10 @@
       </form>
     </section>
 
-   <section id="tweetContainer">
-      <!-- <article class="tweet">
-        <header>
-          <div>
-            <img src="./images/peter.png">
-            <p>Peter</p>
-          </div>
-          <p>@peter</p>
-        </header>
-        <p> I am learning frontend web by designing tweeter app interface </p>
-        <footer>
-          <p>10 days ago</p>
-          <div>
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </footer>
-      </article>
-      <article class="tweet">
-        <header>
-          <img src="./images/angela.png">
-          <p>@angela</p>
-        </header>
-        <p> Tweeter is a good place to express your opinions to the world</p>
-        <footer>
-          <p>2 days ago</p>
-          <div>
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart"></i>
-          </div>
-        </footer>
-      </article> -->
-    </section>
+    <!-- All the tweets are in this container -->
+    <section id="tweetContainer">
 
+    </section>
 
   </main>
   <script src="./scripts/composer-char-counter.js"></script>

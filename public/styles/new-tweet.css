@@ -11,12 +11,14 @@ textarea.error {
     font-weight: 300;
     color: red;
 }
+
 label.error {
     color: red;
     font-size: 1rem;
     display: block;
     margin-top: 5px;
 }
+
 #tweet-text {
     border-bottom: 3px solid #4d4848;
 }
@@ -38,6 +40,14 @@ button {
 #newTweet {
     display: flex;
     justify-content: space-between;
+}
+
+#is-empty {
+    color: red;
+}
+
+#exceeds {
+    color: red;
 }
 
 textarea {
@@ -63,6 +73,7 @@ textarea {
 
 .tweet:hover {
     border-color: #3e58ab;
+    box-shadow: 4px 6px #3e58ab;
 }
 
 article header {
@@ -88,9 +99,11 @@ article footer i {
     margin-top: 15px;
     margin-right: 10px;
 }
+
 article footer p {
     margin-top: 15px;
 }
+
 article footer i:hover {
     color: #33a3ff;
 }

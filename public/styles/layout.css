@@ -35,8 +35,6 @@ main {
   margin-top: 150px;
 }
 
-
-
 /* iPads and Tablets Styles */
 @media only screen and (max-width: 768px) {
   .container {
@@ -55,5 +53,4 @@ main {
   nav.navbar {
     background-color: transparent;
   }
-
 }
