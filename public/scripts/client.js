@@ -6,33 +6,41 @@
 
 
 $(document).ready(function () {
+  $('#is-empty').hide();
+  $('#exceeds').hide();
+  
   $('form').on('submit', function (event) {
     event.preventDefault();
+    $('#is-empty').hide();
+    $('#exceeds').hide();
+    // $('form').validate({
+    //   rules: {
+    //     text: {
+    //       required: true,
+    //       minlength: 1,
+    //       maxlength: 140
+    //     },
+    //   },
+    //   messages: {
+    //     text: {
+    //       minlength: "Tweets cannot be empty character",
+    //       maxlength: "Tweet shouldn't be more than 140 characters"
+    //     }
+    //   }
 
-    $('form').validate({
-      rules: {
-        text: {
-          required: true,
-          minlength: 1,
-          maxlength: 140
-        },
-      },
-      messages: {
-        text: {
-          minlength: "Tweets cannot be empty character",
-          maxlength: "Tweet shouldn't be more than 140 characters"
-        }
-      }
-    });
+      
+    // });
 
-    // const tweetText = $('#tweet-text').val();
-    // if (tweetText.length < 1) {
-    //     alert("Form cannot be empty")
-    // } else if (tweetText.length > 140) {
-    //     alert ("form cannot exceed 150 char")
-    // } else {
+    const tweetText = $('#tweet-text').val();
+    if (tweetText.length < 1) {
+      $('#is-empty').slideDown();
+      return;
+    } else if (tweetText.length > 140) {
+      $('#exceeds').slideDown();
+      return;
+    } else {
     let serializedData = $('form').serialize();
-   
+
     $.ajax({
       url: "/tweets",
       type: "post",
@@ -42,9 +50,9 @@ $(document).ready(function () {
         loadTweets();
         $('#tweet-text').val('');
       })
-    // }
+     }
   });
-
+  
   const loadTweets = () => {
     $.ajax('/tweets', { method: 'GET' })
       .then((tweets) => {
@@ -52,7 +60,7 @@ $(document).ready(function () {
       });
   };
 
-  loadTweets()
+  loadTweets();
 
   const createTweetElement = (tweet) => {
     const myTweet = `

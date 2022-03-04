@@ -4,7 +4,7 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
-
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
@@ -38,12 +38,12 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span>tweeter Project</span>
-    <span id="right-content">
+    <span class="nav-right">
       <h3><em>Write</em> a new tweet</h3>
       <i class="fa-solid fa-angles-down"></i>
     </span>
   </nav>
-  <header id="name-icon">
+  <header class="name-icon">
     <div class="header">
       <img class="header" src="/images/profile-hex.png">
     </div>
@@ -57,6 +57,9 @@
   <main class="container">
 
     <section class="new-tweet">
+      <div id="is-empty"><h4>The tweet cannot be empy</h4></div>
+      <div id="exceeds"><h4>The characters cannot exceeds 140</h4></div>
+
      <h2>Compose Tweet</h2>
       <form>
         <div>
